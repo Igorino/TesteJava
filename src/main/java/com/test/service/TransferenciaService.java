@@ -1,6 +1,7 @@
 package com.test.service;
 
 import com.test.entities.Transferencia;
+import com.test.exception.DataTransferenciaInvalidaException;
 import com.test.repository.TransferenciaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -50,8 +51,8 @@ public class TransferenciaService {
             // Taxa de 1,7% do valor
             taxa = valorTransferencia.multiply(new BigDecimal("0.017"));
         } else {
-            // Caso a data de transferência esteja fora do intervalo permitido, lançar uma exceção
-            throw new IllegalArgumentException("Data de transferência fora do intervalo permitido (0-50 dias).");
+            // Lançar exceção customizada para data fora do intervalo permitido
+            throw new DataTransferenciaInvalidaException("Data de transferência fora do intervalo permitido (0-50 dias).");
         }
 
         return taxa.setScale(2, BigDecimal.ROUND_HALF_UP); // Arredonda para 2 casas decimais
