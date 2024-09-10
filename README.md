@@ -9,7 +9,7 @@ Este projeto é uma aplicação teste de agendamento de transferências financei
 - **Framework**: [Spring Boot](https://spring.io/projects/spring-boot)
     - Utilizado para construir a API RESTful, facilitando o desenvolvimento e configuração do servidor.
 
-- **Linguagem**: [Java 17](https://www.oracle.com/java/technologies/javase-jdk17-downloads.html)
+- **Linguagem**: [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
     - Escolhida por sua estabilidade, suporte a longo prazo e robustez para desenvolvimento de aplicações empresariais.
 
 - **Persistência**: [H2 Database](https://www.h2database.com/html/main.html)
